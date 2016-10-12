@@ -12,5 +12,18 @@ var plot = d3.select('.canvas').append('svg')
     .attr('transform','translate('+ m.l+','+ m.t+')');
 
 //Import data...
+d3.csv('../data/data-2.csv', parse, function(error,rows){
+    console.table(rows);
 
-console.log('Import completed');
+});
+
+function parse(d){
+    if(d.x ){
+
+    }
+
+    return {
+        x: (+d.x)?(+d.x):undefined,
+        y: +(d.y.slice(2))
+    }
+}
